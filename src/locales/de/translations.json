@@ -13,20 +13,20 @@
     "help": "Hilfe"
   },
   "landing": {
-    "greetingMsg": "Willkommen bei Catena-X – The Automotive Network",
-    "heading1": "Bitte füllen Sie das folgende Antragsformular aus, um die Registrierung Ihres Unternehmens für Catena-X abzuschließen.",
+    "greetingMsg": "Willkommen bei Railway-X – The Railway Network",
+    "heading1": "Bitte füllen Sie das folgende Antragsformular aus, um die Registrierung Ihres Unternehmens für Railway-X abzuschließen.",
     "point1": "Das Anmeldeformular besteht aus 5 Schritten, für welche Sie circa 5-10 Minuten benötigen werden.",
-    "point2": "Um die Registrierung direkt abschließen zu können, wird das Handelsregister benötigt sowie eine Bestätigung der Catena-X Terms & Conditions.",
+    "point2": "Um die Registrierung direkt abschließen zu können, wird das Handelsregister benötigt sowie eine Bestätigung der Railway-X Terms & Conditions.",
     "point3": "Die Registrierung kann zu jedem Zeitpunkt pausiert werden. Mit ihren Login Daten können Sie zu einem späteren Zeitpunkt zum letzten Status der Registrierung zurückkehren und fortfahren.",
     "buttonText1": "Registrierung starten",
     "footerText1": "Weitere Informationen finden Sie unter ",
     "footerText2": "Hilfe"
   },
   "registration": {
-    "greetMessage": "Willkommen bei Catena-X – das Automotive Network",
-    "subHeading": "Füllen Sie das folgende Antragsformular aus, um die Registrierung Ihres Unternehmens abzuschließen und Teil von Catena-X zu werden.",
+    "greetMessage": "Willkommen bei Railway-X – das Railway Network",
+    "subHeading": "Füllen Sie das folgende Antragsformular aus, um die Registrierung Ihres Unternehmens abzuschließen und Teil von Railway-X zu werden.",
     "registration": "Registration",
-    "regiStep": "Füllen Sie das folgende Antragsformular aus, um die Registrierung Ihres Unternehmens abzuschließen und Teil von Catena-X zu werden.",
+    "regiStep": "Füllen Sie das folgende Antragsformular aus, um die Registrierung Ihres Unternehmens abzuschließen und Teil von Railway-X zu werden.",
     "regiSubHeading": "",
     "companyData": "Rechtsträger",
     "responsAdmin": "Benutzer hinzufügen",
@@ -98,13 +98,13 @@
     "greetingMsg": "Ihre Registrierung wurde erfolgreich abgesendet!",
     "heading1": "Nächste Schritte",
     "point1": "Alle Registrierungsteilnehmer ihrer Firma erhalten eine E-Mail mit der Bestätigung und den nächsten Schritten",
-    "point2": "Catena-X prüft in der Zwischenzeit ihren Registrierungsanfrage. Sobald die Prüfung erfolgreich beendet ist, werden wir Ihnen eine Email mit dem direkten Zugang zum Netwzrk senden.",
+    "point2": "Railway-X prüft in der Zwischenzeit ihren Registrierungsanfrage. Sobald die Prüfung erfolgreich beendet ist, werden wir Ihnen eine Email mit dem direkten Zugang zum Netwzrk senden.",
     "point3": "Sobald Sie diese E-Mail erhalten haben können Sie sich im Portal anmelden und die technische ntegration starten."
   },
   "companyRole": {
     "companyRoleStep": "3",
     "title": "Rolle des Unternehmens",
-    "subTitle": "Bitte wählen Sie eine oder mehrere Rollen für Ihr Unternehmen aus, um an Catena-X teilzunehmen. Die Unternehmensrolle kann später jederzeit aktualisiert/geändert werden. Je nach gewählter Rolle können die angebotenen Portaldienste abweichen.",
+    "subTitle": "Bitte wählen Sie eine oder mehrere Rollen für Ihr Unternehmen aus, um an Railway-X teilzunehmen. Die Unternehmensrolle kann später jederzeit aktualisiert/geändert werden. Je nach gewählter Rolle können die angebotenen Portaldienste abweichen.",
     "TermsAndCondSpan1": "Yes, I agree to the",
     "TermsAndCondSpan2": "terms and conditions",
     "TermsAndCondSpan3": "of the selected role.",
@@ -202,7 +202,7 @@
     "link5": "Terms of Service",
     "link6": "Cookie Policy",
     "link7": "About",
-    "copyright": "Copyright © by Catena-X Automotive Network."
+    "copyright": "Copyright © by Railway-X Railway Network."
   },
   "contact": {
     "title": "Contact",

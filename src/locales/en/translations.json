@@ -13,8 +13,8 @@
     "help": "Help"
   },
   "landing": {
-    "greetingMsg": "Welcome to Catena-X - The Automotive Network",
-    "heading1": "Please finish the following application form to complete the registration of your company for Catena-X",
+    "greetingMsg": "Welcome to Railway-X - The Railway Network",
+    "heading1": "Please finish the following application form to complete the registration of your company for Railway-X",
     "point1": "The registration form consists of 5 steps and will take approximately 5-10 minutes of your time",
     "point2": "To finish the registration in one run, we propose to ensure that you have the commercial register form of your company handy. If you don't have the form, you can invite the right person in your company to support the registration and upload the form.",
     "point3": "You can pause the registration at any time. Re-connect to your registration status by using the login data which you received via e-mail.",
@@ -23,11 +23,11 @@
     "footerText2": "help section"
   },
   "registration": {
-    "greetMessage": "Welcome to Catena-X",
-    "subHeading": "Please finish the company onboarding by finishing the following tasks to join Catena-X - Automotive Network Portal.",
+    "greetMessage": "Welcome to Railway-X",
+    "subHeading": "Please finish the company onboarding by finishing the following tasks to join Railway-X - Railway Network Portal.",
     "registration": "Registration",
-    "regiStep": "Register to Catena-X by entering all information requested in the following 5 steps",
-    "regiSubHeading": "Please finish the company onboarding by finishing the following tasks to actively participate and use all functions in the Catena-X Automotive Network Portal.",
+    "regiStep": "Register to Railway-X by entering all information requested in the following 5 steps",
+    "regiSubHeading": "Please finish the company onboarding by finishing the following tasks to actively participate and use all functions in the Railway-X Railway Network Portal.",
     "companyData": "Company Data",
     "responsAdmin": "Add Users",
     "companyRole": "Company Role",
@@ -104,7 +104,7 @@
   "companyRole": {
     "companyRoleStep": "3",
     "title": "The role of your company",
-    "subTitle": "Please select one or several company roles with which you want to act/participate in the Catena-X network. The company role can always get updated/changed later. Depending on the selected role, the offered portal services might differ.",
+    "subTitle": "Please select one or several company roles with which you want to act/participate in the Railway-X network. The company role can always get updated/changed later. Depending on the selected role, the offered portal services might differ.",
     "TermsAndCondSpan1": "Yes, I agree to the",
     "TermsAndCondSpan2": "terms and conditions",
     "TermsAndCondSpan3": "of the selected role.",
@@ -202,7 +202,7 @@
     "link5": "Terms of Service",
     "link6": "Cookie Policy",
     "link7": "About",
-    "copyright": "Copyright © by Catena-X Automotive Network."
+    "copyright": "Copyright © by Railway-X Railway Network."
   },
   "contact": {
     "title": "Contact",

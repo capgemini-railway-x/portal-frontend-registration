@@ -6,12 +6,12 @@
     "general": {
       "questionHeadline": "Which company data do I need to add in the registration",
       "question": "(General) Question",
-      "answer": "For the company registration to catena-x, the legal company data are needed. Please add the Headquarter information inside the given fields. If you already have a BPN (Business Partner Number) available you can easily add the BPN inside the search field and we will pre-fill your company data automatically."
+      "answer": "For the company registration to railway-x, the legal company data are needed. Please add the Headquarter information inside the given fields. If you already have a BPN (Business Partner Number) available you can easily add the BPN inside the search field and we will pre-fill your company data automatically."
     },
     "invitePeople": {
       "questionHeadline": "What happens with my added company data?",
       "question": "(General) Question",
-      "answer": "Your company data are used for the registration to catena-x and to create (if not yet existing) a Golden Record data set of your company HQ. This will enable the business partner number creation."
+      "answer": "Your company data are used for the registration to railway-x and to create (if not yet existing) a Golden Record data set of your company HQ. This will enable the business partner number creation."
     },
     "uploadDocuments": {
       "questionHeadline": "What if my company doesnt have a postal code?",
