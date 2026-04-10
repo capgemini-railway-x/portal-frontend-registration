@@ -17,16 +17,17 @@
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
 
-name: release
+name: release RC
 
 on:
   push:
     tags:
-      - 'v*.*.*'
-      - '!v*.*.*-RC*'
+      - 'v*.*.*-RC*'
   workflow_dispatch:
 
 env:
+  IMAGE_NAMESPACE: "tractusx"
+  IMAGE_NAME: "portal-frontend-registration"
   REF_NAME: "${{ github.ref_name }}"
   # variables needed for scripts/legal-notice.sh
   SERVER_URL: "${{ github.server_url }}"
@@ -36,7 +37,6 @@ jobs:
   build-and-push-release:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
       contents: read
 
     steps:
@@ -69,7 +69,7 @@ jobs:
           echo versions equal - building release ${{ env.REF_NAME }}
 
       - name: Install Dependencies
-        run: yarn --frozen-lockfile
+        run: yarn
 
 #      - name: Linter Checks
 #        run: yarn lint
@@ -86,24 +86,20 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@e468171a9de216ec08956ac3ada2f0791b6bd435 # v3.11.1
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v6
+      - name: Login to DockerHub
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3.4.0
         with:
-          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
-          aws-region: ${{ vars.AWS_REGION }}
-
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v2
+          username: ${{ secrets.DOCKER_HUB_USER }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@902fa8ec7d6ecbf8d84d538b9b233a880e428804 # v5.7.0
         with:
-          images:
-            ${{ steps.login-ecr.outputs.registry }}/${{ github.event.repository.name }}
-            # Automatically prepare image tags;
-            # semver patter will generate tags like these for example :v1 :v1.2 v1.2.3
+          images: ${{ env.IMAGE_NAMESPACE }}/${{ env.IMAGE_NAME }}
+           # Automatically prepare image tags;
+           # semver patter will generate tags like these for example :v1 :v1.2 v1.2.3
           tags: |
             type=raw,value=latest
             type=raw,value=${{ env.REF_NAME }}
@@ -120,3 +116,41 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      # https://github.com/peter-evans/dockerhub-description
+      - name: Update Docker Hub description
+        if: github.event_name != 'pull_request'
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77 # v4.0.2
+        with:
+          username: ${{ secrets.DOCKER_HUB_USER }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+          repository: ${{ env.IMAGE_NAMESPACE }}/${{ env.IMAGE_NAME }}
+          readme-filepath: ".conf/docker-notice-registration.md"
+
+  auth-and-dispatch:
+    needs: build-and-push-release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set env
+        run: echo "RELEASE_VERSION=${{ env.REF_NAME }}" >> $GITHUB_ENV
+
+      - name: Get token
+        id: get_workflow_token
+        uses: peter-murray/workflow-application-token-action@d17e3a9a36850ea89f35db16c1067dd2b68ee343 # v4.0.1
+        with:
+          application_id: ${{ secrets.ORG_PORTAL_DISPATCH_APPID }}
+          application_private_key: ${{ secrets.ORG_PORTAL_DISPATCH_KEY }}
+
+      - name: Trigger workflow
+        id: call_action
+        env:
+          TOKEN: ${{ steps.get_workflow_token.outputs.token }}
+        run: |
+          curl -v \
+            --request POST \
+            --url https://api.github.com/repos/eclipse-tractusx/portal/actions/workflows/portal-registration-image-update.yml/dispatches \
+            --header "authorization: Bearer $TOKEN" \
+            --header "Accept: application/vnd.github.v3+json" \
+            --data '{"ref":"release-candidate", "inputs": { "new-image":"${{ env.REF_NAME }}" }}' \
+            --fail
